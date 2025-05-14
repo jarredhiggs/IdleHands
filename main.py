@@ -1,11 +1,18 @@
-from mock_api import MockApi
+import asyncio
 from client import Client
+from mock_api import MockApi
 
-api = MockApi()
-
-def main():
+async def main():
     client = Client()
-    client.begin()
+    client_task = asyncio.create_task(client.begin())
+
+    api = MockApi()
+    api_task = asyncio.create_task(api.get("basic"))
+
+    while True:
+        await asyncio.sleep(5)
+        client_task.cancel()
+    
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

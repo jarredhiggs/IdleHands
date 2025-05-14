@@ -1,5 +1,5 @@
 import asyncio
-from util import debug as d
+from util import debug
 
 class Client:
     def __configure_parameters(self, parameters = None):
@@ -17,15 +17,16 @@ class Client:
 
         except:
                raise "No valid config available for Client!"
-    
+        
+        self.params = params
 
     async def __main_loop(self):
         while True:
-            d("Beginning of Main Loop")
-            await asyncio.sleep(0.5)
+            debug("Beginning of Main Loop")
+            await asyncio.sleep(self.params['check_duration'])
     
-    def begin(self):
-        asyncio.run(self.__main_loop())
+    async def begin(self):
+        await self.__main_loop()
 
     def __init__(self):
         self.__configure_parameters()

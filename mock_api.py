@@ -1,3 +1,4 @@
+from util import debug
 from random import random
 import asyncio
 
@@ -53,9 +54,9 @@ class MockApi:
     
     async def mock_delay(self):
           delay = (random() * self.DELAY_MAX) + self.DELAY_MIN
-          print(delay)
           await asyncio.sleep(delay)
 
-    def get(self, type):
-            asyncio.run(self.mock_delay())
+    async def get(self, type):
+            debug("get " + type)
+            await self.mock_delay()
             return self.responses[type] if type in self.responses else '{}'
