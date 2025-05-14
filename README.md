@@ -22,12 +22,6 @@ This is not your average productivity monitoring tool. It's a panopticon. And yo
 
 ---
 
-## Roadmap
-
-TODO
-
----
-
 ## Philosophy
 
 Idle Hands isn't about "nudging."
@@ -48,10 +42,10 @@ It's a **systematic behavioral correction protocol** wrapped in sass and fire.
 5. Cry
 
 ```bash
-git clone https://github.com/yourname/idlehands
+git clone https://github.com/jarredhiggs/idlehands
 cd idlehands
-# Install Dependencies
-# Run main process
+# TODO: Install Dependencies
+python main.py
 ```
 
 ---

@@ -4,6 +4,10 @@
 
 ---
 
+Next:
+    - Create basic framework for interaction with LLM (mocked)
+    - 
+
 ## Core Activity Monitor
 
 Track app usage, idle time, user input, and log it all.

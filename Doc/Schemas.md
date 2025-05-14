@@ -1,4 +1,4 @@
-# Schemas
+# Overview
 
 ### Common Definitions
 
@@ -39,26 +39,34 @@ To minimize the size of each request (consequently minimizing API tokens), Idle 
 
 Below are the basic requests and responses that are included in the global context.
 
-### Request Schemas
+### Request Types
 
 * **Routine Check-In**
     - Provides monitored data to the LLM. This is how the LLM knows what you're doing with your life.
 
 * **Image Prompt Echo**
+    - When the LLM suggests an image generation prompt via `Image Prompt`, the client must submit it back to the LLM as a separate prompt.
 
 * **Provide Context**
+    - When the LLM requires additional context for a specific action, this request type is used to provide additional details.
 
 * **Action Execution Details**
+    - This request type is used to both report the outcome of executed actions and allow the LLM to provide a follow-up response.
 
 
 
-### Response Schemas
+### Response Types
 
 * **Basic Response**
+    - Provides conversational text to the client.
 * **Request Context**
+    - The response type used to request additinal context about a specific action.
 * **Image Prompt**
+    - When the LLM wants to generate an image, it uses this response type to return the image generation prompt to the client, which can be used for the `Image Prompt Echo` request.
 * **Image URL**
+    - The response type used to return a generated image to the client.
 * **Perform Action**
+    - The response type used to instruct the client to execute a local action.
 
 ### Actions
 

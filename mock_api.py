@@ -1,10 +1,10 @@
-from random import randrange
+from random import random
+import asyncio
 
 class MockApi:
 
-    # Milliseconds
-    DELAY_MIN = 0
-    DELAY_MAX = 600
+    DELAY_MIN = 0.1
+    DELAY_MAX = 1.5 - DELAY_MIN
 
     # TODO: Determine if datetime should be included in the response.
     # It is potentially a waste of tokens: interaction with the client
@@ -17,7 +17,7 @@ class MockApi:
 }
 '''
 
-    more_info_response = r'''
+    more_context_response = r'''
 {
   "type": "more",
   "body": {"text": "feature_name"}
@@ -43,13 +43,19 @@ class MockApi:
 
     responses = {
         'basic': basic_response, 
-        'more': more_info_response,
+        'more': more_context_response,
         'img1': image_propose_response,
         'img2': image_return_response
     }
 
     def __init__(self):
-        pass
+           pass
+    
+    async def mock_delay(self):
+          delay = (random() * self.DELAY_MAX) + self.DELAY_MIN
+          print(delay)
+          await asyncio.sleep(delay)
 
     def get(self, type):
+            asyncio.run(self.mock_delay())
             return self.responses[type] if type in self.responses else '{}'

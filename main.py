@@ -1,16 +1,11 @@
-from asyncio import wait
 from mock_api import MockApi
+from client import Client
 
 api = MockApi()
 
 def main():
-    print(
-    api.get('basic'),
-    api.get('img1'),
-    api.get('img2'),
-    api.get('more')
-    )
-    
+    client = Client()
+    client.begin()
 
-
-main()
+if __name__ == "__main__":
+    main()
