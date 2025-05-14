@@ -42,12 +42,13 @@ Below are the basic requests and responses that are included in the global conte
 ### Request Schemas
 
 * **Routine Check-In**
+    - Provides monitored data to the LLM. This is how the LLM knows what you're doing with your life.
 
 * **Image Prompt Echo**
 
 * **Provide Context**
 
-* **Action Execution Details**: See Below
+* **Action Execution Details**
 
 
 
@@ -57,7 +58,7 @@ Below are the basic requests and responses that are included in the global conte
 * **Request Context**
 * **Image Prompt**
 * **Image URL**
-* **Perform Action**: See Below
+* **Perform Action**
 
 ### Actions
 
