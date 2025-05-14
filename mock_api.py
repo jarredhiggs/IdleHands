@@ -13,29 +13,31 @@ class MockApi:
     basic_response = r'''
 {
   "type": "basic",
-  "body": "This is an example of a basic response."
+  "body": {"text": "This is an example of a basic response."}
 }
 '''
 
     more_info_response = r'''
 {
   "type": "more",
-  "body": [(infotype1, infotype1_param), (infotype2)]
+  "body": {"text": "feature_name"}
 }
 '''
 
     image_propose_response = r'''
 {
   "type": "img1",
-  "body": "Hey! Present this text to the user, but only after the proposed prompt!",
-  "prompt": "Generate an image depicting yourself flipping off the user."
+  "body": {
+            "text": "Hey! Present this text to the user, but only after the proposed prompt!",
+            "prompt": "Generate an image depicting yourself flipping off the user."
+          }
 }
 '''
 
     image_return_response = r'''
 {
   "type": "img2",
-  "body": "https://example.com/image_url.png"
+  "body": {"text": "https://example.com/image_url.png"}
 }
     '''
 

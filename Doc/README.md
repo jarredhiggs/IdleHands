@@ -1,4 +1,4 @@
-![](logo.png)
+![logo](logo.png)
 
 
 **"Because Discipline is best enforced by a daemon with attitude."**

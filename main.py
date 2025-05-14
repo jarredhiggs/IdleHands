@@ -4,8 +4,13 @@ from mock_api import MockApi
 api = MockApi()
 
 def main():
-    response = api.get('basic')
-    print(response)
+    print(
+    api.get('basic'),
+    api.get('img1'),
+    api.get('img2'),
+    api.get('more')
+    )
+    
 
 
 main()
