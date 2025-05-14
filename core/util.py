@@ -1,4 +1,4 @@
-from config import config
+from core.config import config
 
 def debug(message, feature_toggle = config['is_debug']):
     if feature_toggle:
@@ -7,4 +7,3 @@ def debug(message, feature_toggle = config['is_debug']):
         now = datetime.datetime.now()
         invoker = inspect.stack()[1][3]
         print("DEBUG: " + str(now.strftime("%H:%M:%S:%f"))[0:-3] + ": " + invoker + ": " + message)
-

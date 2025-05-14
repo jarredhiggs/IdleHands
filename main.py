@@ -1,13 +1,12 @@
 import asyncio
-from client import Client
-from mock_api import MockApi
+from core.client import Client
+from core.mock_api import MockApi
 
 async def main():
+    api = MockApi()
+
     client = Client()
     client_task = asyncio.create_task(client.begin())
-
-    api = MockApi()
-    api_task = asyncio.create_task(api.get("basic"))
 
     while True:
         await asyncio.sleep(5)

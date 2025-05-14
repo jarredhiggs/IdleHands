@@ -1,5 +1,7 @@
 import asyncio
-from util import debug
+import aiohttp
+from core.util import debug
+
 
 class Client:
     def __configure_parameters(self, parameters = None):
@@ -7,7 +9,7 @@ class Client:
 
         try:
             if parameters is None:        
-                from config import config
+                from core.config import config
                 params = config["client"]          
             else:
                 params = parameters
@@ -22,7 +24,7 @@ class Client:
 
     async def __main_loop(self):
         while True:
-            debug("Beginning of Main Loop")
+            debug("START")
             await asyncio.sleep(self.params['check_duration'])
     
     async def begin(self):

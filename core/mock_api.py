@@ -1,4 +1,4 @@
-from util import debug
+from core.util import debug
 from random import random
 import asyncio
 
