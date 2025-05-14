@@ -1,4 +1,5 @@
-# Idle Hands
+![](logo.png)
+
 
 **"Because Discipline is best enforced by a daemon with attitude."**
 

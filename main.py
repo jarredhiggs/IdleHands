@@ -1,8 +1,11 @@
+from asyncio import wait
 from mock_api import MockApi
 
 api = MockApi()
 
 def main():
-    pass
+    response = api.get('basic')
+    print(response)
+
 
 main()

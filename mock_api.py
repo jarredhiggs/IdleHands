@@ -1,16 +1,53 @@
-import collections
-from datetime import datetime
+from random import randrange
 
 class MockApi:
 
-    raw_response = r'''
+    # Milliseconds
+    DELAY_MIN = 0
+    DELAY_MAX = 600
+
+    # TODO: Determine if datetime should be included in the response.
+    # It is potentially a waste of tokens: interaction with the client
+    # is synchronous and thus the client's local time should suffice.
+
+    basic_response = r'''
 {
-  "datetime": ''' + str(datetime.now()) + r'''
-  "response_text": "This is an example of the API's response text which we will be processing and analyzing. Yep."
-  "more_info": [(infotype1, infotype1_param), (infotype2)]
-  "image_url": http://www.example.com/image_url.png
+  "type": "basic",
+  "body": "This is an example of a basic response."
 }
 '''
 
+    more_info_response = r'''
+{
+  "type": "more",
+  "body": [(infotype1, infotype1_param), (infotype2)]
+}
+'''
+
+    image_propose_response = r'''
+{
+  "type": "img1",
+  "body": "Hey! Present this text to the user, but only after the proposed prompt!",
+  "prompt": "Generate an image depicting yourself flipping off the user."
+}
+'''
+
+    image_return_response = r'''
+{
+  "type": "img2",
+  "body": "https://example.com/image_url.png"
+}
+    '''
+
+    responses = {
+        'basic': basic_response, 
+        'more': more_info_response,
+        'img1': image_propose_response,
+        'img2': image_return_response
+    }
+
     def __init__(self):
-        print(self.raw_response)
+        pass
+
+    def get(self, type):
+            return self.responses[type] if type in self.responses else '{}'
