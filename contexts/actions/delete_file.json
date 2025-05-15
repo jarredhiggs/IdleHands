@@ -1,0 +1,6 @@
+{
+    "name": "delete_file",
+    "args": {
+        "path": "str (relative to %homepath%. Can delete entire directories.)"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "name": "list_files",
+    "args": {
+        "path": "str (relative to %homepath%)",
+        "recursive_level": number of layers deep to return
+    }
+}
