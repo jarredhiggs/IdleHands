@@ -1,0 +1,8 @@
+{
+    "name": "create_file",
+    "args": {
+        "path": "str (relative to %homepath%)",
+        "data": "<data>",
+        "encoding": "<encoding>"
+    }
+}
